@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Adivinanza Javascript</title>
+    <script>
+  
+var min= 1;
+var max= 50;
+var aleatorio = Math.floor(Math.random() * max - min + 1) + min;
+var intentos = 0;
+var nombre = prompt('Bienvenido a adivina el numero, cual es tu nombre?');
+var numero;
+
+for (intentos; intentos < 5 ; intentos++ ){
+    numero = parseInt(prompt(nombre +', ingrese un numero entre ' + min +' y el ' + max));
+
+    if (numero >= min && numero <= max){
+        if (numero < aleatorio){
+            alert('El numero que ingreso es mas bajo');
+        } else if(numero > aleatorio){
+            alert('El numero que ingreso es mas alto');
+        } else if(numero == aleatorio){
+            break;
+        }
+    } else {
+        alert ('debe ingresar un numero entre ' + min + 'y el ' + max);
+    }
+} 
+if (numero == aleatorio) {
+    alert('Felicitaciones adivinaste el numero en ' + (intentos + 1) + ' intentos.');
+} else {
+    alert('agotaste el numero de intentos, suerte la proxima!!!');
+} 
+
+   </script>
+</head>
+<body>
+
+</body>
+
+</html>
